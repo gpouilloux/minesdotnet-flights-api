@@ -1,9 +1,15 @@
 [
   {
-    "number": "AF1234",
-    "date_departure": "2014-03-13T13:47:00",
-    "date_arrival": "2014-03-13T22:47:00",
+    "number": "AF123",
+    "date_departure": "2016-01-02T13:47:00",
+    "date_arrival": "2016-01-02T19:47:00",
     "airport_departure": "CDG",
     "airport_arrival": "JFK"
+  },{
+    "number": "AF651",
+    "date_departure": "2016-01-13T18:47:00",
+    "date_arrival": "2016-01-14T10:47:00",
+    "airport_departure": "CDG",
+    "airport_arrival": "BKK"
   }
 ]
