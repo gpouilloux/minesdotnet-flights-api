@@ -1,26 +1,33 @@
-from flask import Flask
+from flask import Flask, request
 from pymongo import MongoClient
-import datetime
+from datetime import datetime, timedelta
+from bson.json_util import dumps
 
 app = Flask(__name__)
 
-# TODO flights with critera such as date, location (departure, arrival)
-
-@app.route("/")
-def hello():
+# HTTP GET /flights
+# @param date [format=YYYY-mm-dd] : date of departure
+# @param airport_departure : airport of departure
+# @param airport_arrival : airport of arrival
+# @return list of flights matching criteria
+@app.route("/flights", methods=['GET'])
+def flights():
     client = MongoClient('localhost', 27017)
     db = client.test
 
-    post = {"author": "Mike",
-            "text": "My first blog post!",
-             "tags": ["mongodb", "python", "pymongo"],
-             "date": datetime.datetime.utcnow()}
+    date = request.args.get('date')
+    airport_departure = request.args.get('airport_departure')
+    airport_arrival = request.args.get('airport_arrival')
 
-    posts = db.posts
-    post_id = posts.insert_one(post).inserted_id
-    print(post_id)
-    return "Hello World!"
+    date_departure = datetime.strptime(date, '%Y-%m-%d')
 
+    if date_departure is None or airport_departure is None or airport_arrival is None:
+        abort(400)
+
+    return dumps(db.flights.find({  "date_departure": {'$lt': (date_departure + timedelta(days=2)).strftime("%Y-%m-%dT%H:%M:%S"),
+                                                       '$gte': (date_departure - timedelta(days=2)).strftime("%Y-%m-%dT%H:%M:%S")},
+                                    "airport_departure": airport_departure,
+                                    "airport_arrival": airport_arrival}))
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug='true')
