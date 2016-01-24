@@ -1,0 +1,9 @@
+[
+  {
+    "number": "AF1234",
+    "date_departure": "2014-03-13T13:47:00",
+    "date_arrival": "2014-03-13T22:47:00",
+    "airport_departure": "CDG",
+    "airport_arrival": "JFK"
+  }
+]
