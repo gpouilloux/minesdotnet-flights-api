@@ -13,14 +13,10 @@ app = Flask(__name__)
 # @return list of flights matching criteria
 @app.route("/flights", methods=['GET'])
 def flights():
-    uri = os.environ['MONGOLAB_URI']
-    if uri is None:
-        client = MongoClient('localhost', 27017)
-        db = client.test
-    else:
-        client = MongoClient(uri)
-        db = client.get_default_database()
+    uri = os.environ.get('MONGOLAB_URI', 'mongodb://localhost:27017/test')
+    client = MongoClient(uri)
 
+    db = client.get_default_database()
     date = request.args.get('date')
     airport_departure = request.args.get('airport_departure')
     airport_arrival = request.args.get('airport_arrival')
