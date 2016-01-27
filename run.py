@@ -19,7 +19,7 @@ def flights():
         db = client.test
     else:
         client = MongoClient(uri)
-        db = client.get_default_database
+        db = client.get_default_database()
 
     date = request.args.get('date')
     airport_departure = request.args.get('airport_departure')
