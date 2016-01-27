@@ -39,4 +39,4 @@ if __name__ == "__main__":
     server_port = os.environ['PORT']
     if(server_port is None):
         server_port = 5000
-    app.run(debug='true',port=server_port)
+    app.run(debug='true',port=int(server_port))
