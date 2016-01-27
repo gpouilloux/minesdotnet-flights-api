@@ -16,11 +16,9 @@ def flights():
     if uri is None:
         client = MongoClient('localhost', 27017)
         db = client.test
-        server_port = 5000
     else:
         client = MongoClient(uri)
         db = client.get_default_database
-        server_port = os.environ['PORT']
 
     date = request.args.get('date')
     airport_departure = request.args.get('airport_departure')
@@ -37,4 +35,7 @@ def flights():
                                     "airport_arrival": airport_arrival}))
 
 if __name__ == "__main__":
+    server_port = os.environ['PORT']
+    if(server_port is None):
+        server_port = 5000
     app.run(debug='true',port=server_port)
