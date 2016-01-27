@@ -1,1 +1,1 @@
-web: python run.py
+web: ./mongo_init.sh && python run.py
