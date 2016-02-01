@@ -1,10 +1,14 @@
 from flask import Flask, request
+from flask.ext.cors import CORS, cross_origin
 from pymongo import MongoClient
 from datetime import datetime, timedelta
 from bson.json_util import dumps
 import os
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 # HTTP GET /flights
 # @param date [format=YYYY-mm-dd] : date of departure
@@ -13,6 +17,7 @@ app = Flask(__name__)
 # @param flexible : number of days before and after the flight [optional]
 # @return list of flights matching criteria
 @app.route("/flights", methods=['GET'])
+@cross_origin()
 def flights():
     uri = os.environ.get('MONGOLAB_URI', 'mongodb://localhost:27017/test')
     client = MongoClient(uri)
