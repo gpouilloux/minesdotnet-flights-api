@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, abort
 from flask.ext.cors import CORS, cross_origin
 from pymongo import MongoClient
 from datetime import datetime, timedelta
@@ -28,11 +28,13 @@ def flights():
     airport_arrival = request.args.get('airport_arrival')
     flexible = request.args.get('flexible', '1')
 
-    date_departure = datetime.strptime(date, '%Y-%m-%d')
+    if date is None and airport_departure is None and airport_arrival is None:
+        return dumps(db.flights.find())
 
-    if date_departure is None or airport_departure is None or airport_arrival is None:
+    if date is None or airport_departure is None or airport_arrival is None:
         abort(400)
 
+    date_departure = datetime.strptime(date, '%Y-%m-%d')
     return dumps(db.flights.find({  "date_departure": {'$lt': (date_departure + timedelta(days=int(flexible))).strftime("%Y-%m-%dT%H:%M:%S"),
                                                        '$gte': (date_departure - timedelta(days=int(flexible))).strftime("%Y-%m-%dT%H:%M:%S")},
                                     "airport_departure": airport_departure,
