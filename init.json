@@ -84,5 +84,11 @@
     "date_arrival": "2016-04-15T19:47:00",
     "airport_departure": "Marseille",
     "airport_arrival": "Londres"
+  },{
+    "number": "AF631",
+    "date_departure": "2016-01-02T13:47:00",
+    "date_arrival": "2016-01-02T19:47:00",
+    "airport_departure": "Paris",
+    "airport_arrival": "New-York"
   }
 ]
