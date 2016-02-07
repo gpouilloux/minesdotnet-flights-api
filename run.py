@@ -9,6 +9,14 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
+# Check is a property has been provided or not
+def notProvided(property):
+    return property is None or property == ''
+
+# Error handle for HTTP code 400
+@app.errorhandler(400)
+def badRequest(error):
+    return "{}\nThe server was not able to process your request because it is malformed.".format(error)
 
 # HTTP GET /flights
 # @param date [format=YYYY-mm-dd] : date of departure
@@ -28,10 +36,12 @@ def flights():
     airport_arrival = request.args.get('airport_arrival')
     flexible = request.args.get('flexible', '1')
 
+    # returns all flights if no parameter is provided
     if date is None and airport_departure is None and airport_arrival is None:
         return dumps(db.flights.find())
 
-    if date is None or airport_departure is None or airport_arrival is None:
+    # bad request
+    if notProvided(date) or notProvided(airport_departure) or notProvided(airport_arrival):
         abort(400)
 
     date_departure = datetime.strptime(date, '%Y-%m-%d')
