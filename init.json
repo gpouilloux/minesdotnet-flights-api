@@ -4,91 +4,106 @@
     "date_departure": "2016-04-01T13:47:00",
     "date_arrival": "2016-04-01T19:47:00",
     "airport_departure": "Paris",
-    "airport_arrival": "New-York"
+    "airport_arrival": "New-York",
+    "price": 1124
   },{
     "number": "AF651",
     "date_departure": "2016-04-01T10:47:00",
     "date_arrival": "2016-04-01T18:47:00",
     "airport_departure": "Paris",
-    "airport_arrival": "Hong-Kong"
+    "airport_arrival": "Hong-Kong",
+    "price": 945
   },{
     "number": "IB254",
     "date_departure": "2016-04-01T10:47:00",
     "date_arrival": "2016-04-01T18:47:00",
     "airport_departure": "Limoges",
-    "airport_arrival": "Berlin"
+    "airport_arrival": "Berlin",
+    "price": 397
   },{
     "number": "AA666",
     "date_departure": "2016-04-01T10:47:00",
     "date_arrival": "2016-04-01T18:47:00",
     "airport_departure": "Nantes",
-    "airport_arrival": "San Francisco"
+    "airport_arrival": "San Francisco",
+    "price": 1422
   },{
     "number": "RY145",
     "date_departure": "2016-04-01T10:47:00",
     "date_arrival": "2016-04-01T18:47:00",
     "airport_departure": "Lyon",
-    "airport_arrival": "Sydney"
+    "airport_arrival": "Sydney",
+    "price": 1457
   },{
     "number": "AH412",
     "date_departure": "2016-04-01T10:47:00",
     "date_arrival": "2016-04-01T18:47:00",
     "airport_departure": "Tokyo",
-    "airport_arrival": "Bordeaux"
+    "airport_arrival": "Bordeaux",
+    "price": 1342
   },{
     "number": "AF137",
     "date_departure": "2016-04-01T10:47:00",
     "date_arrival": "2016-04-01T18:47:00",
     "airport_departure": "Londres",
-    "airport_arrival": "Marseille"
+    "airport_arrival": "Marseille",
+    "price": 351
   },
   {
     "number": "AF123",
     "date_departure": "2016-04-15T13:47:00",
     "date_arrival": "2016-04-15T19:47:00",
     "airport_departure": "New-York",
-    "airport_arrival": "Paris"
+    "airport_arrival": "Paris",
+    "price": 1205
   },{
     "number": "AF651",
     "date_departure": "2016-04-15T13:47:00",
     "date_arrival": "2016-04-15T19:47:00",
     "airport_departure": "Hong-Kong",
-    "airport_arrival": "Paris"
+    "airport_arrival": "Paris",
+    "price": 1364
   },{
     "number": "IB254",
     "date_departure": "2016-04-15T13:47:00",
     "date_arrival": "2016-04-15T19:47:00",
     "airport_departure": "Berlin",
-    "airport_arrival": "Limoges"
+    "airport_arrival": "Limoges",
+    "price": 256
   },{
     "number": "AA666",
     "date_departure": "2016-04-15T13:47:00",
     "date_arrival": "2016-04-15T19:47:00",
     "airport_departure": "San Francisco",
-    "airport_arrival": "Nantes"
+    "airport_arrival": "Nantes",
+    "price": 1489
   },{
     "number": "RY145",
     "date_departure": "2016-04-15T13:47:00",
     "date_arrival": "2016-04-15T19:47:00",
     "airport_departure": "Sydney",
-    "airport_arrival": "Lyon"
+    "airport_arrival": "Lyon",
+    "price": 1597
   },{
     "number": "AH412",
     "date_departure": "2016-04-15T13:47:00",
     "date_arrival": "2016-04-15T19:47:00",
     "airport_departure": "Bordeaux",
-    "airport_arrival": "Tokyo"
+    "airport_arrival": "Tokyo",
+    "price": 1333
   },{
     "number": "AF137",
     "date_departure": "2016-04-15T13:47:00",
     "date_arrival": "2016-04-15T19:47:00",
     "airport_departure": "Marseille",
-    "airport_arrival": "Londres"
+    "airport_arrival": "Londres",
+    "price": 341
   },{
     "number": "AF631",
     "date_departure": "2016-01-02T13:47:00",
     "date_arrival": "2016-01-02T19:47:00",
     "airport_departure": "Paris",
-    "airport_arrival": "New-York"
+    "airport_arrival": "New-York",
+    "price": 1365
   }
 ]
