@@ -105,5 +105,12 @@
     "airport_departure": "Paris",
     "airport_arrival": "New-York",
     "price": 1365
-  }
+    },{
+      "number": "AF652",
+      "date_departure": "2016-04-02T10:47:00",
+      "date_arrival": "2016-04-02T18:47:00",
+      "airport_departure": "Paris",
+      "airport_arrival": "Hong-Kong",
+      "price": 1200
+    }
 ]
